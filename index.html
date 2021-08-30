@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <h1 class="display-1">Books.</h1>
+        <h2 class="display-6">Add a new one to your library</h2>
+        <div class="row g-3 mb-5">
+          <div class="col-sm">
+            <input id="form-title" type="text" class="form-control" placeholder="Title" aria-label="Title" />
+          </div>
+          <div class="col-sm">
+            <input id="form-author" type="text" class="form-control" placeholder="Author" aria-label="Author" />
+          </div>
+          <div class="col-sm">
+            <input id="form-pages" type="number" min="1" class="form-control" placeholder="Pages" aria-label="Pages" />
+          </div>
+          <div class="col-sm">
+            <select class="form-select" id="form-status">
+              <option selected disabled>Status</option>
+              <option value="Read">Read</option>
+              <option value="Unread">Unread</option>
+            </select>
+          </div>
+          <div class="col-auto">
+            <button id="form-submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+        <table class="table table-striped table-responsive">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Status</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <div class="row">
+          <p class="mt-5">Copyright &copy; Voicu Dordea</p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
