@@ -14,6 +14,8 @@ submit.addEventListener("click", addBook);
 
 let myLibrary = [];
 
+// Constructor pattern
+/*
 function Book(id, title, author, pages, status) {
   (this.id = id), (this.title = title), (this.author = author), (this.pages = pages), (this.status = status);
 }
@@ -33,6 +35,19 @@ let c = new Book(3, "The Clean House and Other Plays", "Sarah Ruhl", "635", "Unr
 let d = new Book(4, "How I Learned to Drive", "Paula Vogel", "102", "Unread");
 let e = new Book(5, "Speech & Debate", "Stephen Karam", "134", "Unread");
 let f = new Book(6, "Slave Play", "Jeremy O. Harris", "186", "Unread");
+*/
+
+// Factory function pattern
+const bookFactory = (id, title, author, pages, status) => {
+  return { id, title, author, pages, status };
+};
+
+let a = bookFactory(1, "Fairview", "Jackie Sibblies Drury", "121", "Unread");
+let b = bookFactory(2, "Appropriate/An Octoroon", "Branden Jacobs-Jenkins", "235", "Unread");
+let c = bookFactory(3, "The Clean House and Other Plays", "Sarah Ruhl", "635", "Unread");
+let d = bookFactory(4, "How I Learned to Drive", "Paula Vogel", "102", "Unread");
+let e = bookFactory(5, "Speech & Debate", "Stephen Karam", "134", "Unread");
+let f = bookFactory(6, "Slave Play", "Jeremy O. Harris", "186", "Unread");
 
 // Add the initial books to array
 function addBookToLibrary(book) {
@@ -72,7 +87,8 @@ renderBooks();
 function addBook(e) {
   if (title.value !== "" && author.value !== "" && pages.value !== "" && status.value !== "Status") {
     const nextIdGenerator = myLibrary.length + 1;
-    const newBook = new Book(nextIdGenerator, title.value, author.value, pages.value, status.value);
+    // const newBook = new Book(nextIdGenerator, title.value, author.value, pages.value, status.value);
+    const newBook = bookFactory(nextIdGenerator, title.value, author.value, pages.value, status.value);
     myLibrary.push(newBook);
     renderBooks();
   }
