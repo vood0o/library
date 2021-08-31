@@ -66,7 +66,6 @@ function renderBooks() {
     tableBody.innerHTML += html;
   });
 }
-
 renderBooks();
 
 // Add a book
@@ -83,7 +82,7 @@ function addBook(e) {
 // Remove book
 function removeBook(e) {
   if (e.target.classList.contains("remove-book")) {
-    const index = myLibrary.findIndex((book) => book.id === e.target.parentElement.parentElement.dataset.key);
+    const index = myLibrary.findIndex((book) => book.id === parseInt(e.target.parentElement.parentElement.dataset.key));
     myLibrary.splice(index, 1);
     renderBooks();
   }
